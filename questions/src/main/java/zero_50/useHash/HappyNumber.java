@@ -1,4 +1,4 @@
-package zero_50;
+package zero_50.useHash;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -18,7 +18,7 @@ import java.util.Set;
  */
 public class HappyNumber {
     public static void main(String[] args) {
-        System.out.println(isHappyV3(19));
+        System.out.println(isHappy(19));
     }
 
     private static HashSet<Integer> set = new HashSet<>();
@@ -39,7 +39,7 @@ public class HappyNumber {
         int sum = 0;
         String num = String.valueOf(n);
         for (int ch : num.toCharArray()) {
-            ch -= 48;
+            ch -= '0';
             sum += ch * ch;
         }
         return isHappy(sum);

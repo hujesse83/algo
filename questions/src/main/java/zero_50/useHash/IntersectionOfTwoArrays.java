@@ -1,4 +1,4 @@
-package zero_50;
+package zero_50.useHash;
 
 import java.util.ArrayList;
 import java.util.Arrays;
