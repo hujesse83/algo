@@ -1,5 +1,5 @@
 package zero_50.linkedList;
-
+// No 24
 public class SwapNodesInPairs {
       public class ListNode {
       int val;
