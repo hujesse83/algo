@@ -1,29 +1,10 @@
 package zero_50.linkedList;
-
-import java.util.Stack;
-
 /**No206
  * http://c.biancheng.net/view/8105.html
  * 四种方法实现单链表的反转
  */
 
 public class ReverseLinkedList {
-  class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode() {
-    }
-
-    ListNode(int val) {
-      this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-      this.val = val;
-      this.next = next;
-    }
-  }
 
   /**
    * 方法一：迭代反转链表

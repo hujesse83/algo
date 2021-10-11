@@ -1,14 +1,6 @@
 package zero_50.linkedList;
 // No 24
 public class SwapNodesInPairs {
-      public class ListNode {
-      int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-  }
-
     /**
      * 自己写的 用了四个指针 严格来说emm不太简洁  但是我看了答案 还是我的好理解
      */
