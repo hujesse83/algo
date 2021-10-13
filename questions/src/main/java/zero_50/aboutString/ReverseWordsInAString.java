@@ -72,4 +72,9 @@ public class ReverseWordsInAString {
         System.out.println(res.length());
         return res.toString();
     }
+    /**
+     * 方法四 ： 先将s去空格，然后再反转字符串。再反转单词中的字符
+     */
+
+
 }
