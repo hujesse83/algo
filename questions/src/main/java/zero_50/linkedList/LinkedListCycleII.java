@@ -22,4 +22,24 @@ public class LinkedListCycleII {
         }
        return null;
     }
+    /**
+     * 方法二会修改链表
+     */
+    public ListNode detectCycleV2(ListNode head) {
+        if (head==null){
+            return null;
+        }
+        ListNode temp = new ListNode(-1);
+        ListNode cur = head;
+        ListNode p ;
+        while (cur!=null){
+            if (cur.next == temp){
+                return cur;
+            }
+            p = cur.next;
+            cur.next = temp;
+            cur = p;
+        }
+        return null;
+    }
 }
