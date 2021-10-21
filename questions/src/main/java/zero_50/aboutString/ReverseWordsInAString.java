@@ -3,8 +3,6 @@ package zero_50.aboutString;
 import java.util.*;
 // No 151 重要哇
 public class ReverseWordsInAString {
-    int counts;
-
     public static void main(String[] args) {
         String a = "a b c  d";
         System.out.println(reverseWordsV3(a));
@@ -72,9 +70,7 @@ public class ReverseWordsInAString {
         System.out.println(res.length());
         return res.toString();
     }
-    /**
-     * 方法四 ： 先将s去空格，然后再反转字符串。再反转单词中的字符
-     */
+
 
 
 }

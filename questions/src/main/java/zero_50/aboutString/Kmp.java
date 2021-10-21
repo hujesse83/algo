@@ -3,8 +3,8 @@ package zero_50.aboutString;
 //  当 needle 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题
 public class Kmp {
     public static void main(String[] args) {
-        String a = "";
-        String b = "";
+        String a = "abcddasasdsa";
+        String b = "dda";
         System.out.println(strStr(a, b));
     }
     public static int strStr(String haystack, String needle) {
@@ -28,7 +28,7 @@ public class Kmp {
         }
         System.out.println(i);
         System.out.println(j);
-        return i+1-j==needle.length()?i+1-j:-1;
+        return i-j==needle.length()?i+1-j:-1;
     }
     public static void getPrefixTable(String p,int []next){
         char []pattern = p.toCharArray();
@@ -47,7 +47,7 @@ public class Kmp {
         }
     }
     public static void getNext(int []preTable){
-        for (int i = preTable.length-1; i >0 ; i--) {
+        for (int i = preTable.length-1; i >=1 ; i--) {
             preTable[i] = preTable[i-1];
         }
         preTable[0] = -1;

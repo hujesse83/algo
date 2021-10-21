@@ -1,5 +1,7 @@
 package zero_50.array;
 
+import java.util.Stack;
+
 // 二分查找 并不陌生不多说了 No704
 public class binarySearch {
     public static void main(String[] args) {
