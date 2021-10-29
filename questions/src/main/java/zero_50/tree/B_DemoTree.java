@@ -1,43 +1,31 @@
 package zero_50.tree;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Stack;
 
 public class B_DemoTree {
-    private int val;
-    private B_DemoTree left;
-    private B_DemoTree right;
 
-    B_DemoTree() {
-    }
-
-    B_DemoTree(int val) {
-        this.val = val;
-    }
-
-    B_DemoTree(int val, B_DemoTree left, B_DemoTree right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
 
     //Binary Tree Preorder Traversal LC144
-    void preOrder(B_DemoTree node) {
-        if (node == null) {
+    void preOrder(TreeNode treeNode) {
+        if (treeNode == null) {
             return;
         }
-        System.out.println(node.val);
-        preOrder(node.left);
-        preOrder(node.right);
+        System.out.println(treeNode.val);
+        preOrder(treeNode.left);
+        preOrder(treeNode.right);
     }
     // 非递归
-    void preOrderV2(B_DemoTree node){
-        if (node==null){
+    void preOrderV2(TreeNode treeNode){
+        if (treeNode ==null){
             return;
         }
-        Stack<B_DemoTree> stack = new Stack<>();
-        stack.push(node);
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(treeNode);
         while(!stack.isEmpty()){
-            B_DemoTree temp = stack.pop();
+            TreeNode temp = stack.pop();
             System.out.println(temp.val);
             if (temp.right!=null){
                 stack.push(temp.right);
@@ -48,18 +36,18 @@ public class B_DemoTree {
         }
     }
     //Binary Tree Preorder Traversal LC94
-    void infixOrder(B_DemoTree node) {
-        if (node == null) {
+    void infixOrder(TreeNode treeNode) {
+        if (treeNode == null) {
             return;
         }
-        infixOrder(node.left);
-        System.out.println(node.val);
-        infixOrder(node.right);
+        infixOrder(treeNode.left);
+        System.out.println(treeNode.val);
+        infixOrder(treeNode.right);
     }
     //非递归
-    void infixOrderV2(B_DemoTree node){
-        B_DemoTree temp = node;
-        Stack<B_DemoTree> stack = new Stack<>();
+    void infixOrderV2(TreeNode treeNode){
+        TreeNode temp = treeNode;
+        Stack<TreeNode> stack = new Stack<>();
         while (temp!=null || !stack.isEmpty()){
             while (temp!=null){
                 stack.push(temp);
@@ -72,32 +60,34 @@ public class B_DemoTree {
         }
     }
     //Binary Tree Preorder Traversal LC145
-    void postOrder(B_DemoTree node) {
-        if (node == null) {
+    void postOrder(TreeNode treeNode) {
+        if (treeNode == null) {
             return;
         }
-        postOrder(node.left);
-        postOrder(node.right);
-        System.out.println(node.val);
+        postOrder(treeNode.left);
+        postOrder(treeNode.right);
+        System.out.println(treeNode.val);
     }
     // 非递归
-    public static void postOrderV2(B_DemoTree root) {
-        Stack<B_DemoTree> stack1 = new Stack<>();
-        Stack<B_DemoTree> stack2 = new Stack<>();
-        stack1.push(root);
-        while (!stack1.isEmpty()) {
-            B_DemoTree temp = stack1.pop();
-            stack2.push(temp);
-            if(temp.left!=null){
-                stack1.push(temp.left);
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null){
+            return result;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()){
+            TreeNode treeNode = stack.pop();
+            result.add(treeNode.val);
+            if (treeNode.left != null){
+                stack.push(treeNode.left);
             }
-            if(temp.right!=null){
-                stack1.push(temp.right);
+            if (treeNode.right != null){
+                stack.push(treeNode.right);
             }
         }
-        while (!stack2.isEmpty()) {
-            System.out.println(stack2.pop().val);
-        }
+        Collections.reverse(result);
+        return result;
     }
 
 }
