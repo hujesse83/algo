@@ -8,7 +8,7 @@ import java.util.*;
     // input [3,9,20,null,null,15,7]
     // output  [[3],[9,20],[15,7]]
  */
-public class bfs_traverse {
+public class BinaryTreeLevelOrderTraversal {
     public static void main(String[] args) {
         TreeNode s1 = new TreeNode(1);
         TreeNode s2 = new TreeNode(2);
@@ -19,7 +19,7 @@ public class bfs_traverse {
         s1.right = s3;
         s2.left = s4;
         s3.right = s5;
-        checkFun01(s1,0);
+        dfs(s1,0);
         System.out.println(result);
     }
     public static List<List<Integer>> result = new LinkedList<>();
@@ -49,7 +49,7 @@ public class bfs_traverse {
     }
     // 张见识了 这段代码  层级遍历还可以dfs
     // 搁置10/30
-    public static void checkFun01(TreeNode node, Integer deep) {
+    public static void dfs(TreeNode node, Integer deep) {
         if (node == null) return;
         deep++;
 
@@ -60,8 +60,8 @@ public class bfs_traverse {
         }
         result.get(deep - 1).add(node.val);
 
-        checkFun01(node.left, deep);
-        checkFun01(node.right, deep);
+        dfs(node.left, deep);
+        dfs(node.right, deep);
     }
 
 }
