@@ -4,7 +4,7 @@ package zero_50.tree;
 public class MaximumDepthOfBinaryTree {
 
     public int maxDepth(TreeNode root) {
-
+return 1;
     }
 
 
