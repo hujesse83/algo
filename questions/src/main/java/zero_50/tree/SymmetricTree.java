@@ -86,8 +86,27 @@ public class SymmetricTree {
         }
         return true;
     }
-    // 使用双端队列
-
+    // 使用双端队列 也行
+    public boolean isSymmetricV4(TreeNode root) {
+        Deque<TreeNode> deque = new LinkedList<>();
+        deque.offerFirst(root.left);
+        deque.offerLast(root.right);
+        while (!deque.isEmpty()){
+            TreeNode nodeLeft = deque.pollFirst();
+            TreeNode nodeRight = deque.pollLast();
+            if(nodeLeft==null&&nodeRight==null){
+                continue;
+            }
+            if (nodeLeft==null || nodeRight==null ||nodeLeft.val!= nodeRight.val){
+                return false;
+            }
+            deque.offerFirst(nodeLeft.left);
+            deque.offerFirst(nodeLeft.right);
+            deque.offerLast(nodeRight.right);
+            deque.offerLast(nodeRight.left);
+        }
+        return true;
+        }
 }
 
 
