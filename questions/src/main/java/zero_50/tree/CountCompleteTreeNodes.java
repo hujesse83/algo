@@ -20,10 +20,30 @@ public class CountCompleteTreeNodes {
     public int countNodesV2(TreeNode root){
         return root==null?0:1+countNodesV2(root.left)+countNodesV2(root.right);
     }
-    // 利用完全二叉树性质
+    // 利用完全二叉树性质，因为题目给定了这道题是完全二叉树，不用判断是否是完全二叉树
     public int countNodesV3(TreeNode node){
-        //  在子树中找完全二叉树
-        return 0;
+        //  我们要做的就是在子树中找完全二叉树
+        if (node==null){
+            return 0;
+        }
+        int leftDepth = depth(node.left);
+        int rightDepth = depth(node.right);
+        if (leftDepth==rightDepth){
+            // 左子树是满二叉树
+            return (1<<leftDepth) -1 + 1 + countNodesV3(node.right);
+        }else {
+            // 右子树是满二叉树
+            return (1<<rightDepth) - 1 + 1 +countNodesV3(node.left) ;
+        }
+    }
+    // 不用递归也行
+    public int depth(TreeNode node){
+        int deep = 0;
+        while (node!=null){
+            deep++;
+            node = node.left;
+        }
+        return deep;
     }
 
 }
