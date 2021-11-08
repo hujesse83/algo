@@ -17,6 +17,7 @@ import java.util.List;
  */
 public class PathSum {
     // 1、第一题 只是判断
+    //如果要搜索其中一条符合条件的路径，那么递归一定需要返回值，因为遇到符合条件的路径了就要及时返回
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if (root == null) {
             return false;
@@ -27,30 +28,29 @@ public class PathSum {
         return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
     }
     //2、第二题 找出所有
-
-
-
-
-    public static void main(String[] args) {
-        TreeNode root = new TreeNode(5);
-        TreeNode s4 = new TreeNode(4);
-        TreeNode s8 = new TreeNode(8);
-        TreeNode s11 = new TreeNode(11);
-        TreeNode s7 = new TreeNode(7);
-        TreeNode s2 = new TreeNode(2);
-        TreeNode s13 = new TreeNode(13);
-        TreeNode ss4 = new TreeNode(4);
-        TreeNode s5 = new TreeNode(5);
-        TreeNode s1 = new TreeNode(1);
-        root.left = s4;
-        root.right = s8;
-        s4.left = s11;
-        s8.left = s13;
-        s8.right = ss4;
-        s11.left = s7;
-        s11.right = s2;
-        ss4.left = s5;
-        ss4.right = s1;
+    //如果需要搜索整颗二叉树且不用处理递归返回值，递归函数就不要返回值
+    public List<List<Integer>> res = new ArrayList<>();
+    public int x = 0;
+    public  List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+        List<Integer> cur = new ArrayList<>();
+        dfs(root,cur,targetSum);
+        return res;
     }
 
+    public  void dfs(TreeNode root, List<Integer> cur,int targetSum) {
+        if (root==null){
+            return;
+        }
+        if (root.left==null && root.right==null && targetSum-root.val==0){
+            cur.add(root.val);
+            List<Integer> item = new ArrayList<>(cur);  //创建一个新的
+            res.add(item);
+            cur.remove(cur.size()-1);
+            return;
+        }
+        cur.add(root.val);
+        dfs(root.left,cur,targetSum-root.val);
+        dfs(root.right,cur,targetSum-root.val);
+        cur.remove(cur.size()-1);  // 回朔的体现
+    }
 }
