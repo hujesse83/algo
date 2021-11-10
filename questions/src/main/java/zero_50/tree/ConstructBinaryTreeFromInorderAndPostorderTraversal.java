@@ -20,7 +20,7 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
         }
         int val = postorder[postRight];
         TreeNode root = new TreeNode(val);
-        int index = 0;
+        int index = inLeft;
         for (int i = inLeft; i <= inRight; i++) {
             if (inorder[i] == val) {
                 index = i;
@@ -43,7 +43,7 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
         }
         int val = preorder[preLeft];
         TreeNode root = new TreeNode(val);
-        int index = 0;
+        int index = inLeft;
         for (int i = inLeft; i <= inRight; i++) {
             if (inorder[i] == val) {
                 index = i;
