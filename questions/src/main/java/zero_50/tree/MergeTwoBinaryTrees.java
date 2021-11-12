@@ -3,6 +3,7 @@ package zero_50.tree;
 /**
  * 合并二叉树
  * LC617
+ * 合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为 NULL 的节点将直接作为新二叉树的节点
  * @Time 2021/11/11 01：49
  */
 public class MergeTwoBinaryTrees {
