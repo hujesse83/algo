@@ -32,7 +32,10 @@ public class CombinationSum {
             return;
         }
         // for循环之上剪枝
-        for (int i = index; i < candidates.length && target - candidates[i] >= 0; i++) {
+        for (int i = index; i < candidates.length ; i++) {
+            if (target-candidates[i]<0){
+                return;
+            }
             item.add(candidates[i]);
             backTrace(candidates, target - candidates[i], i);
             item.remove(item.size() - 1);
