@@ -1,12 +1,12 @@
 package zero_50.backtrace;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
  * @Time 2021/11/15 17:55
  * LC 17 mid 难度
+ * 2021/11/15 22：04
  */
 public class LetterCombinationsOfAPhoneNumber {
     public static ArrayList<String> res = new ArrayList<>();
