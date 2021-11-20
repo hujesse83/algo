@@ -1,6 +1,7 @@
 package zero_50.backtrace;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -11,8 +12,11 @@ import java.util.List;
 public class SubsetsII {
     public List<List<Integer>> res = new ArrayList<>();
     public List<Integer> item = new ArrayList<>();
+    public int[] used;
 
     public List<List<Integer>> subsetsWithDup(int[] nums) {
+        used = new int[nums.length];
+        Arrays.sort(nums);
         backTrace(nums, 0);
         return res;
     }
@@ -21,12 +25,19 @@ public class SubsetsII {
         res.add(new ArrayList<>(item));
         for (int i = index; i < nums.length; i++) {
             // 去重
-            if (i > index && nums[i] == nums[i - 1]) {
+            /**
+             if (i > index && nums[i] == nums[i - 1]) {
+             continue;
+             }
+             */
+            if (i>0 && used[i-1]==0 && nums[i]==nums[i-1]){
                 continue;
             }
-            item.add(i);
+            item.add(nums[i]);
+            used[i] = 1;
             backTrace(nums, i + 1);
             item.remove(item.size() - 1);
+            used[i] = 0;
         }
     }
 }
