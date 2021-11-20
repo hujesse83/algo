@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @Author huJesse
  * @Date 2021/11/20 21:17
- * @Description 这个英语单词意思是全排列 LC46
+ * @Description 这个英语单词意思是全排列 && 题目中nums中的数据都是不同的
  * Input: nums = [1,2,3]
  * Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
  */
