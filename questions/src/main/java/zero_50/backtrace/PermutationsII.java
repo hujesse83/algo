@@ -8,6 +8,8 @@ import java.util.List;
  * @Author huJesse
  * @Date 2021/11/20 21:32
  * @Description 题目中nums中的数据有相同的 LC47 去重为关键啊
+ * link ： https://programmercarl.com/0047.%E5%85%A8%E6%8E%92%E5%88%97II.html#%E6%8B%93%E5%B1%95
+ * 上面讲述了去重 以[1,1,1]图解 一目了然
  */
 public class PermutationsII {
     public List<List<Integer>> res = new ArrayList<>();
