@@ -11,6 +11,7 @@ import java.util.List;
 public class SubsetsII {
     public List<List<Integer>> res = new ArrayList<>();
     public List<Integer> item = new ArrayList<>();
+
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         backTrace(nums, 0);
         return res;
@@ -20,7 +21,7 @@ public class SubsetsII {
         res.add(new ArrayList<>(item));
         for (int i = index; i < nums.length; i++) {
             // 去重
-            if (i>index && nums[i]==nums[i-1]){
+            if (i > index && nums[i] == nums[i - 1]) {
                 continue;
             }
             item.add(i);
