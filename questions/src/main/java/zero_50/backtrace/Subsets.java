@@ -18,13 +18,16 @@ public class Subsets {
     }
 
     public void backTrace(int[] nums, int index) {
-        res.add(item);
+        res.add(new ArrayList<>(item));
         for (int i = index; i < nums.length; i++) {
-            item.add(i);
+            item.add(nums[i]);
             backTrace(nums, i + 1);
             item.remove(item.size() - 1);
         }
     }
 
-
+    public static void main(String[] args) {
+        int[] nums = {4,6,7,7};
+        System.out.println(new Subsets().subsets(nums));
+    }
 }
