@@ -25,6 +25,9 @@ public class IncreasingSubsequences {
         }
 
         int[] used = new int[201]; // 保证了每一层的去重！妙啊 ，因为题目给定了-100<=nums[i]<=100
+        /**
+         * 这里的去重与SubsetsII的去重又不一样了，前者是排好序的。而我没有排好序。
+         */
         for (int i = start; i < nums.length; i++) {
             if (!path.isEmpty() && nums[i] < path.get(path.size() - 1) ||
                     (used[nums[i] + 100] == 1)) continue;
