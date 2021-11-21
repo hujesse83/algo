@@ -35,19 +35,19 @@ public class NQueens {
         }
     }
     public boolean isValid(int row,int col){
-        for (int i = row; i >=0 ; i--) {
+        for (int i = row-1; i >=0 ; i--) {
             if (chessBoard[i][col]==1){  // 垂直方向上有棋子
                 return false;
             }
         }
         // 查看坐上斜线是否有皇后
-        for (int i = row , j = col; i >=0&&j>=0 ; i--,j--) {
+        for (int i = row-1 , j = col-1; i >=0&&j>=0 ; i--,j--) {
             if (chessBoard[i][j]==1){
                 return false;
             }
         }
         // 查看右上斜线是否有皇后
-        for (int i = row,j=col; i>=0&&j<chessBoard[0].length ; i--,j++) {
+        for (int i = row-1,j=col+1; i>=0&&j<chessBoard[0].length ; i--,j++) {
             if (chessBoard[i][j]==1){
                 return false;
             }
