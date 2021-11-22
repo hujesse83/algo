@@ -65,7 +65,7 @@ public class LetterCombinationsOfAPhoneNumber {
     }
 
     // V2 简洁答案
-    public List<String> letterCombinationsV2(String digits) {
+    public static List<String> letterCombinationsV2(String digits) {
         if(digits==null ||digits.length()==0){
             return res;
         }
@@ -74,20 +74,20 @@ public class LetterCombinationsOfAPhoneNumber {
         backTracking(digits,numString, 0);
         return res;
     }
-    public void backTracking(String digits,String[] numString,int num){
-        if (num==digits.length()){
+    public static void backTracking(String digits,String[] numString,int index){
+        if (index==digits.length()){
             res.add(sb.toString());
             return;
         }
-        String str = numString[digits.charAt(num)-'0'];
+        String str = numString[digits.charAt(index)-'0'];
         for (int i = 0; i < str.length(); i++) {
             sb.append(str.charAt(i));
-            backTracking(digits,numString,num+1);
+            backTracking(digits,numString,index+1);
             sb.deleteCharAt(sb.length()-1);
         }
     }
     public static void main(String[] args) {
-        letterCombinations("1");
+        letterCombinationsV2("23");
         System.out.println(res);
     }
 }
