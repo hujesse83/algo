@@ -10,6 +10,7 @@ import java.util.List;
  * @Description 题目中nums中的数据有相同的 LC47 去重为关键啊
  * link ： https://programmercarl.com/0047.%E5%85%A8%E6%8E%92%E5%88%97II.html#%E6%8B%93%E5%B1%95
  * 上面讲述了去重 以[1,1,1]图解 一目了然
+ * LC 47
  */
 public class PermutationsII {
     public List<List<Integer>> res = new ArrayList<>();
@@ -30,12 +31,11 @@ public class PermutationsII {
             return;
         }
         for (int i = 0; i < nums.length; i++) {
-            // 重复元素判断
-            if (usedArray[i] == 1) {
-                continue;
-            }
             // 去重 精华
             if (i > 0 && usedArray[i - 1] == 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            if (usedArray[i]==1){
                 continue;
             }
             item.add(nums[i]);
