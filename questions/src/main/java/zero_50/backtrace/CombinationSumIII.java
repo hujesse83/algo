@@ -22,10 +22,10 @@ public class CombinationSumIII {
             res.add(new ArrayList<>(item));
             return;
         }
-        if (n < 0) {
-            return;
-        }
-        for (int i = begin; i < 10; i++) {
+        for (int i = begin; i < 10 && i<=9-(k-item.size())+1; i++) {  // for循环起始位置剪枝
+            if (n-i<0){
+                return ;
+            }
             item.add(i);
             backTrace(i + 1, k, n - i); // 这样保证了begin是升序，相当于剪枝了
             item.remove(item.size() - 1);

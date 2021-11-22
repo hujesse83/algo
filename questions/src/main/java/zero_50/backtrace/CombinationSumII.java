@@ -17,6 +17,7 @@ import java.util.List;
  * ]
  * 难点在于去重..  v1:通过index
  * v2:通过used数组 适用条件更广
+ * * 去重分为“树枝去重”和“树层去重”
  */
 public class CombinationSumII {
     public List<List<Integer>> res = new ArrayList<>();
@@ -26,9 +27,6 @@ public class CombinationSumII {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         used = new int[candidates.length];
         Arrays.sort(candidates);
-        if (candidates.length == 0) {
-            return res;
-        }
         backTrace(candidates, target, 0);
         return res;
     }
