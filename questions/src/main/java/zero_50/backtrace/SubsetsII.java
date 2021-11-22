@@ -25,11 +25,6 @@ public class SubsetsII {
         res.add(new ArrayList<>(item));
         for (int i = index; i < nums.length; i++) {
             // 去重
-            /**
-             if (i > index && nums[i] == nums[i - 1]) {
-             continue;
-             }
-             */
             if (i>0 && used[i-1]==0 && nums[i]==nums[i-1]){
                 continue;
             }

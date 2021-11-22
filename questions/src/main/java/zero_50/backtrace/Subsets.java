@@ -6,7 +6,9 @@ import java.util.List;
 /**
  * @Author huJesse
  * @Date 2021/11/20 20:44
- * @Description 求子集问题 可以抽象为求树的节点 LC78
+ * @Description 求子集问题 可以抽象为求树的节点
+ * 此子集数组元素是不同的，所以不用考虑去重问题
+ * LC78
  */
 public class Subsets {
     public List<List<Integer>> res = new ArrayList<>();
@@ -27,7 +29,7 @@ public class Subsets {
     }
 
     public static void main(String[] args) {
-        int[] nums = {4,6,7,7};
+        int[] nums = {4,6,7};
         System.out.println(new Subsets().subsets(nums));
     }
 }
