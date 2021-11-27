@@ -9,6 +9,7 @@ import java.util.Comparator;
  * v1:按照左边界排序，就要从右向左遍历，因为左边界数值越大越好（越靠右），这样就给前一个区间的空间就越大，所以可以从右向左遍历。
  * v2:按照右边界排序，就要从左向右遍历，因为右边界越小越好，只要右边界越小，留给下一个区间的空间就越大，所以从左向右遍历，优先选右边界小的。
  * v3:其实不用按照右边界进行排序，直接按照打气球那一题，箭的个数就是不重叠区间的个数，那么重叠区间的个数就是总长度减去不重叠区间的个数，只需要修改最后的返回值即可
+ * LC 435
  */
 public class NoneOverlappingIntervals {
     public int eraseOverlapIntervals(int[][] intervals) {
