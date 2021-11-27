@@ -6,7 +6,7 @@ import java.util.Comparator;
 /**
  * @Author huJesse
  * @Date 2021/11/27 16:55
- * @Description 总结为区间分割问题。LC
+ * @Description 总结为区间分割问题。LC452
  */
 public class MinimumNumberOfArrowsToBurstBalloons {
     public int findMinArrowShots(int[][] points) {
