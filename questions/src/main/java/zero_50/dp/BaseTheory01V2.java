@@ -28,6 +28,8 @@ public class BaseTheory01V2 {
         int []dp = new int[col];
         for(int i = 0; i < row; i++) { // 遍历物品
             for(int j = bagSize; j >= weight[i]; j--) { // 遍历背包容量
+                // 对于这个递推公式，发现自己理解得还不够透彻。
+                // 意思是dp[j] = 不加入背包的价值 与 加入了背包之后 （物品的价值 + 剩余空间背包最大价值）的比较
                 dp[j] = Math.max(dp[j], dp[j - weight[i]] + value[i]);
             }
         }
