@@ -34,5 +34,22 @@ public interface intro {
      * 完全背包和01背包问题唯一不同的地方就是，每种物品有无限件。
      * 完全背包和01背包问题唯一不同的地方就是，每种物品有无限件。
      * 完全背包和01背包问题唯一不同的地方就是，每种物品有无限件。
+     * 如果求组合数就是外层for循环遍历物品，内层for遍历背包。
+     * 如果求排列数就是外层for遍历背包，内层for循环遍历物品
+     *        // 这样遍历确定的是组合数量。
+     *         for (int i = 0; i < coins.length; i++) {
+     *             for (int j = coins[i]; j <= amount; j++) {
+     *                 dp[j] += dp[j - coins[i]];
+     *             }
+     *         }
+     *         /**这样遍历确定的是排列数量
+     *         for (int j = 0; j <=amount ; j++) {
+     *             for (int i = 0; i <coins.length ; i++) {
+     *                 if (j-coins[i]>=0){
+     *                     dp[j]+=dp[j-coins[i]];
+     *                 }
+     *             }
+     *         }
+     *
      */
 }
