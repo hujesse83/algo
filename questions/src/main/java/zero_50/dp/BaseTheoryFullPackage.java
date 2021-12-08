@@ -12,9 +12,11 @@ public class BaseTheoryFullPackage {
         int []value = {15,20,30};
         int bagWeight = 4;
         int []dp = new int[bagWeight+1];
-        for (int i = 0; i <weight.length ; i++) {  // 遍历物品
-            for (int j = weight[i]; j <=bagWeight ; j++) {  // 遍历背包容量
-                dp[j] = Math.max(dp[j],dp[j-weight[i]]+value[i]);
+        //而完全背包的物品是可以添加多次的，所以要从小到大去遍历，即：
+        // 先遍历物品，再遍历背包
+        for(int i = 0; i < weight.length; i++) { // 遍历物品
+            for(int j = weight[i]; j <= bagWeight ; j++) { // 遍历背包容量
+                dp[j] = Math.max(dp[j], dp[j - weight[i]] + value[i]);
             }
         }
         System.out.println(Arrays.toString(dp));
