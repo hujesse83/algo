@@ -15,7 +15,6 @@ import java.util.Arrays;
  * 1、确定dp数组以及下标的含义
  * dp[j]：凑成总金额j的货币组合数为dp[j]
  * 2、确定递推公式
- * dp[j] += dp[j - coins[i]]; 不装+装的总数。
  */
 public class CoinChange2 {
     public int change(int amount, int[] coins) {
@@ -29,6 +28,16 @@ public class CoinChange2 {
                 dp[j] += dp[j - coins[i]];
             }
         }
+        //再理解
+        /*
+        1、dp[i]能组成的组合数的个数.i表示重量总和
+        2、dp数组推导。dp[j] += dp[j - coins[i]];
+        dp[i] = dp[i-coins[0]] + dp[i-coins[1]]  比如
+        coins = [1,2] amount =3
+        dp[3] = (1 与 dp[2] 组合) + (2与dp[1]组合) 。 常数直接省略了
+        dp[3] = dp[1] + dp[2]
+        dp[2] = 总和为2的情况下，放入重量为1，还剩下j-nums[i]的重量 basically 1和dp[1]的组合.dp[1] + dp[0] ==> dp[0]代表选择自己
+      */
         /**这样遍历确定的是排列数量
         for (int j = 0; j <=amount ; j++) {
             for (int i = 0; i <coins.length ; i++) {
