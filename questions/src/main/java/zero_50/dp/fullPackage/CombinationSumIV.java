@@ -24,6 +24,7 @@ public class CombinationSumIV {
                 }
             }
         }
+        // dp[3] = 1 && dp[2]  + 2 && dp[1]     。。 这里就是{1,2} 与{2,1}的差别了
         return dp[target];
     }
 
