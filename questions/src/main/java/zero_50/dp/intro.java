@@ -50,6 +50,11 @@ public interface intro {
      *                 }
      *             }
      *         }
-     *
+     *1、确定dp数组以及下标的含义：int dp[] = new int[target+1]; //凑成目标正整数为i的排列个数为dp[i]
+     *2、确定递推公式 dp[i] = dp[i]+dp[i-nums[j];
+     * dp[i]=dp[i-nums[0]]+dp[i-nums[1]]+dp[i-nums[2]]+..
+     *         //举个例子比如nums=[1,3,4],target=7;
+     *         //dp[7]=dp[6]+dp[4]+dp[3].
+     * 3、dp数组初始化        dp[0] = 1; 含义 dp[1] = dp[0]+0=1;
      */
 }
