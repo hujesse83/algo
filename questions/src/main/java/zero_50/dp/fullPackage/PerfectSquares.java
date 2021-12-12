@@ -5,6 +5,11 @@ import java.util.Arrays;
 /**
  * @Author huJesse
  * @Date 2021/12/12 17:11
+ * LC 279
+ * @Description ：Input: n = 12
+ * Output: 3
+ * Explanation: 12 = 4 + 4 + 4.
+ * 参考：https://programmercarl.com/0279.%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0.html#%E6%80%9D%E8%B7%AF
  */
 public class PerfectSquares {
     public int numSquares(int n) {
