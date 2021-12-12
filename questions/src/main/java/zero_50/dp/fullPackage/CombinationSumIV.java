@@ -7,7 +7,11 @@ package zero_50.dp.fullPackage;
  * Given an array of distinct integers nums and a target integer target,
  * return the number of possible combinations that add up to target.
  * 全背包 排列问题
- *
+ * 排列与组合遍历顺序区别！！！
+ * 排列与组合遍历顺序区别！！！
+ * 排列与组合遍历顺序区别！！！
+ *如果把遍历nums（物品）放在外循环，遍历target的作为内循环的话，举一个例子：计算dp[4]的时候，结果集只有 {1,3} 这样的集合
+ * ，不会有{3,1}这样的集合，因为nums遍历放在外层，3只能出现在1后面！
  */
 public class CombinationSumIV {
     public int combinationSum4(int[] nums, int target) {
