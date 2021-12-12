@@ -1,7 +1,9 @@
 package zero_50.dp.fullPackage;
 
+import java.util.Arrays;
+
 /**
- * LC377 超级经典 全背包组合问题
+ * LC377 超级经典 全背包排列问题
  * @Author huJesse
  * @Date 2021/12/9 09:29
  * Given an array of distinct integers nums and a target integer target,
@@ -21,13 +23,14 @@ public class CombinationSumIV {
         //举个例子比如nums=[1,2],target=3;
         //dp[3]=dp[1]+dp[2]
         //其实就是说3的组合数可以由三部分组成，1和dp[2]，2和dp[1];
-        for (int j = 0; j <=target ; j++) {  // 先遍历重量
+        for (int j = 1; j <=target ; j++) {  // 先遍历重量 排列
             for (int i = 0; i <nums.length ; i++) {
                 if (j-nums[i]>=0){
                     dp[j]+=dp[j-nums[i]];
                 }
             }
         }
+        System.out.println(Arrays.toString(dp));
         // dp[3] = 1 && dp[2]  + 2 && dp[1]     。。 这里就是{1,2} 与{2,1}的差别了
         return dp[target];
     }
