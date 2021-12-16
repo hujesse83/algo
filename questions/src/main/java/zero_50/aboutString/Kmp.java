@@ -9,6 +9,7 @@ public class Kmp {
         System.out.println(strStr(a, b));
     }
 
+
     public static int strStr(String haystack, String needle) {
         if (haystack == "" || needle == "") {
             return 0;
