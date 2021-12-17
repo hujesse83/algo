@@ -10,6 +10,7 @@ public class Kmp {
     }
 
 
+
     public static int strStr(String haystack, String needle) {
         if (haystack == "" || needle == "") {
             return 0;
