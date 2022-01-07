@@ -26,7 +26,7 @@ public class MaximumSubArray {
     }
     // 方法二、动态规格, 当前状态与上一个状态有关
     public int maxSubArrayDP(int[] nums) {
-        int dp[] = new int[nums.length];
+        int[] dp = new int[nums.length];
         dp[0] = nums[0];
         for (int i = 1;i<nums.length;i++){
             dp[i] = Math.max(nums[i],nums[i]+dp[i-1]);
