@@ -26,12 +26,15 @@ public class MaximumSubArray {
     }
     // 方法二、动态规格, 当前状态与上一个状态有关
     public int maxSubArrayDP(int[] nums) {
+        int temp = nums[0];
         int[] dp = new int[nums.length];
         dp[0] = nums[0];
         for (int i = 1;i<nums.length;i++){
             dp[i] = Math.max(nums[i],nums[i]+dp[i-1]);
+            temp = Math.max(temp, dp[i]);  // stream 耗时较多.
         }
-        return Arrays.stream(dp).max().getAsInt();
+       // return Arrays.stream(dp).max().getAsInt();  10ms -> 3ms
+        return temp;
     }
 
 }
