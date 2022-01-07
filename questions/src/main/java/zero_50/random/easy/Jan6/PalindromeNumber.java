@@ -1,4 +1,4 @@
-package zero_50.random.easy;
+package zero_50.random.easy.Jan6;
 
 /**
  * @author jesse.hu
