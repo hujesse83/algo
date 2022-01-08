@@ -9,7 +9,7 @@ package zero_50.random.easy.Jan8;
  * 刚好字符之间与数字之间可以对应； 比如：char c1 = '1' + '1' - '0'; （'1'的ASCII为49，'0'为48） 这样结果才能变成'2';否则如果不减去'0',结果就是两个字符1之间的ASCII相加，为98
  */
 public class AddBinary {
-    //1、 star
+    //1、 star star
     public static String addBinary(String a, String b) {StringBuilder ans = new StringBuilder();
 
         int n = Math.max(a.length(), b.length()), carry = 0;
