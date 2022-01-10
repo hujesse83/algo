@@ -38,9 +38,8 @@ public class MergeSortedArray {
             }
             index++;
         }
-        for (int i = 0; i < m + n; i++) {
-            nums1[i] = res[i];
-        }
+       // src表示源数组，srcPos表示源数组要复制的起始位置，desc表示目标数组，length表示要复制的长度。
+        if (m + n >= 0) System.arraycopy(res, 0, nums1, 0, m + n);
     }
 
     public static void main(String[] args) {
