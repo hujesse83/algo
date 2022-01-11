@@ -25,7 +25,7 @@ public class BinaryTreeInorderTraversal {
             return ;
         }
         dfs(node.left);
-        res.add(node.val);   // 树的先序、中序、后序 只需要调换 '根'这一行
+        res.add(node.val);    // 树的先序、中序、后序 只需要调换 '根'这一行
         dfs(node.right);
     }
 }
