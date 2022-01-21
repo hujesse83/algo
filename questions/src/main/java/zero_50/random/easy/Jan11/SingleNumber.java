@@ -12,7 +12,7 @@ public class SingleNumber {
     /**
      * 1、交换律: a ^ b ^ c = a ^ c ^ b
      * 2、0 ^ n = n;
-     * 3、n ^ n = 0;
+     * 3、n ^ n = 0;   异或操作
      * eg. 2 ^ 3 ^ 2 ^ 4 ^ 3= 2 ^ 2 ^ 3 ^ 3 ^ 4
      */
     public int singleNumber(int[] nums) {
